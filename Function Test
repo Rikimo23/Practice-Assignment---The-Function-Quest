@@ -1,0 +1,68 @@
+# The Mighty Calculator
+def add_numbers(a, b):
+    return a + b
+
+def subtract_numbers(a, b):
+    return a - b
+
+def multiply_numbers(a, b):
+    return a * b
+
+def divide_numbers(a, b):
+    if b != 0:
+        return a / b
+    else:
+        return "Error: Division by zero!"
+
+result = add_numbers(5, 3)
+print("The sum is:", result)
+
+result = subtract_numbers(10, 4)
+print("The difference is:", result)
+
+result = multiply_numbers(6, 2)
+print("The product is:", result)
+
+result = divide_numbers(15, 0)
+print("The quotient is:", result)
+
+def fibonacci(n):
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+num = int(input("Enter a number to get the Fibonacci value: "))
+print(f"The Fibonacci number at position {num} is: {fibonacci(num)}")
+
+
+def decode_message(encoded_message):
+    cipher = {'a': 'm', 'b': 'n', 'c': 'o', 'd': 'p', 'e': 'q', 
+              'f': 'r', 'g': 's', 'h': 't', 'i': 'u', 'j': 'v', 
+              'k': 'w', 'l': 'x', 'm': 'y', 'n': 'z', 'o': 'a', 
+              'p': 'b', 'q': 'c', 'r': 'd', 's': 'e', 't': 'f', 
+              'u': 'g', 'v': 'h', 'w': 'i', 'x': 'j', 'y': 'k', 
+              'z': 'l'}
+
+    decoded = ''.join(cipher.get(char, char) for char in encoded_message)
+    return decoded
+
+message = input("Enter the encoded message: ")
+print("Decoded message:", decode_message(message))
+
+
+import re
+
+def is_valid_email(email):
+    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    return re.match(pattern, email) is not None
+
+email = input("Enter an email address to validate: ")
+if is_valid_email(email):
+    print("This is a valid email address.")
+else:
+    print("This is not a valid email address.")
+
+
